@@ -10,7 +10,7 @@ namespace JixhDb.Data
     {
        
         public JixhDbContext()
-            : base("name=JixhDb", throwIfV1Schema: false)
+            : base("data source=ZERZOLAR-LAPTOP;initial catalog=JixhDb;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework")
         {
         }
 
@@ -18,8 +18,7 @@ namespace JixhDb.Data
         {
             return new JixhDbContext();
         }
-
-        public IDbSet<ApplicationUser> Users { get; set; }
+        
       
     }
 

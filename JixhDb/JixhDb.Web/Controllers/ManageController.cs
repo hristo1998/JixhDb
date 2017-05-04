@@ -1,15 +1,16 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
-using JixhDb.Models.ViewModels.ManageAccount;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-
-namespace JixhDb.Web.Controllers
+﻿namespace JixhDb.Web.Controllers
 {
-    [Authorize]
+    using System.Linq;
+    using System.Threading.Tasks;
+    using System.Web;
+    using System.Web.Mvc;
+    using JixhDb.Models.ViewModels.ManageAccount;
+    using JixhDb.Web.Attributes;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.Owin;
+    using Microsoft.Owin.Security;
+
+    [MyAuthorize]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;

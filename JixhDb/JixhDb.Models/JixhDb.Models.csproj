@@ -114,6 +114,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntittyModels\ApplicationUser.cs" />
+    <Compile Include="EntittyModels\Category.cs" />
+    <Compile Include="EntittyModels\Comment.cs" />
+    <Compile Include="EntittyModels\Movie.cs" />
+    <Compile Include="EntittyModels\Review.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginListViewModel.cs" />

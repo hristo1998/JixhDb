@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JixhDb.Models", "JixhDb.Mod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JixhDb.Data", "JixhDb.Data\JixhDb.Data.csproj", "{40CE35BF-CD95-4677-8A12-E8F93C602115}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JixhDb.API", "JixhDb.API\JixhDb.API.csproj", "{38C40BC9-89F7-4B37-BC88-7DD7FE0288B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JixhDb.API.Tests", "JixhDb.API.Tests\JixhDb.API.Tests.csproj", "{6D138B01-809C-4DBC-A549-C70DD31066E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{40CE35BF-CD95-4677-8A12-E8F93C602115}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40CE35BF-CD95-4677-8A12-E8F93C602115}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40CE35BF-CD95-4677-8A12-E8F93C602115}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38C40BC9-89F7-4B37-BC88-7DD7FE0288B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C40BC9-89F7-4B37-BC88-7DD7FE0288B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C40BC9-89F7-4B37-BC88-7DD7FE0288B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C40BC9-89F7-4B37-BC88-7DD7FE0288B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D138B01-809C-4DBC-A549-C70DD31066E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D138B01-809C-4DBC-A549-C70DD31066E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D138B01-809C-4DBC-A549-C70DD31066E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D138B01-809C-4DBC-A549-C70DD31066E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
