@@ -38,3 +38,5 @@ D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Models\bin\D
 D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Models\bin\Debug\Microsoft.Owin.Security.OAuth.xml
 D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Models\bin\Debug\Newtonsoft.Json.xml
 D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Models\obj\Debug\JixhDb.Models.csprojResolveAssemblyReference.cache
+D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Models\bin\Debug\AutoMapper.dll
+D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Models\bin\Debug\AutoMapper.xml

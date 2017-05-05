@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -168,10 +172,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Attributes\MyAuthorizeAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -235,6 +240,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\Unauthorized.cshtml" />
+    <Content Include="Views\Movies\Create.cshtml" />
+    <Content Include="Views\Movies\Delete.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Movies\Edit.cshtml" />
+    <Content Include="Views\Movies\GetMovies.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JixhDb.Data\JixhDb.Data.csproj">
@@ -244,6 +254,10 @@
     <ProjectReference Include="..\JixhDb.Models\JixhDb.Models.csproj">
       <Project>{9acc3c2e-b1f1-4f13-944a-71145798544b}</Project>
       <Name>JixhDb.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JixhDb.Web.Services\JixhDb.Web.Services.csproj">
+      <Project>{e6d609b3-c58d-48f5-a086-197a804eff53}</Project>
+      <Name>JixhDb.Web.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -255,8 +269,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Admin\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <PropertyGroup>

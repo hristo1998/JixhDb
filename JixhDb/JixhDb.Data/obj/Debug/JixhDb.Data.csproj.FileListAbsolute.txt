@@ -28,3 +28,5 @@ D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Data\bin\Deb
 D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Data\bin\Debug\System.Web.WebPages.Razor.xml
 D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Data\bin\Debug\System.Web.WebPages.xml
 D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Data\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Data\bin\Debug\AutoMapper.dll
+D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Data\bin\Debug\AutoMapper.xml

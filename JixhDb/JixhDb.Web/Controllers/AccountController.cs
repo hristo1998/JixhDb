@@ -7,10 +7,12 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using JixhDb.Models.ViewModels.Account;
+using JixhDb.Web.Attributes;
 
 namespace JixhDb.Web.Controllers
 {
-    [Authorize]
+    [MyAuthorize]
+    [RoutePrefix("Account")]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -53,6 +55,7 @@ namespace JixhDb.Web.Controllers
         //
         // GET: /Account/Login
         [AllowAnonymous]
+        [Route("Login")]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
@@ -64,6 +67,7 @@ namespace JixhDb.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("Login")]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
@@ -92,6 +96,7 @@ namespace JixhDb.Web.Controllers
         //
         // GET: /Account/VerifyCode
         [AllowAnonymous]
+        [Route("VerifyCode")]
         public async Task<ActionResult> VerifyCode(string provider, string returnUrl, bool rememberMe)
         {
             // Require that the user has already logged in via username/password or external login
@@ -107,6 +112,7 @@ namespace JixhDb.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("VerifyCode")]
         public async Task<ActionResult> VerifyCode(VerifyCodeViewModel model)
         {
             if (!ModelState.IsValid)
@@ -135,6 +141,7 @@ namespace JixhDb.Web.Controllers
         //
         // GET: /Account/Register
         [AllowAnonymous]
+        [Route("Register")]
         public ActionResult Register()
         {
             return View();
@@ -145,15 +152,16 @@ namespace JixhDb.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("Register")]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
-                this.UserManager.AddToRole(user.Id, "Member");
                 if (result.Succeeded)
                 {
+                    this.UserManager.AddToRole(user.Id, "Member");
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
@@ -162,7 +170,7 @@ namespace JixhDb.Web.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("GetMovies", "Movies");
                 }
                 AddErrors(result);
             }
@@ -174,6 +182,7 @@ namespace JixhDb.Web.Controllers
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
+        [Route("ConfirmEmail")]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)
         {
             if (userId == null || code == null)
@@ -187,6 +196,7 @@ namespace JixhDb.Web.Controllers
         //
         // GET: /Account/ForgotPassword
         [AllowAnonymous]
+        [Route("ForgotPassword")]
         public ActionResult ForgotPassword()
         {
             return View();
@@ -197,6 +207,7 @@ namespace JixhDb.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("ForgotPassword")]
         public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
         {
             if (ModelState.IsValid)
@@ -223,6 +234,7 @@ namespace JixhDb.Web.Controllers
         //
         // GET: /Account/ForgotPasswordConfirmation
         [AllowAnonymous]
+        [Route("ForgotPasswordConfirmation")]
         public ActionResult ForgotPasswordConfirmation()
         {
             return View();
@@ -231,6 +243,7 @@ namespace JixhDb.Web.Controllers
         //
         // GET: /Account/ResetPassword
         [AllowAnonymous]
+        [Route("ResetPassword")]
         public ActionResult ResetPassword(string code)
         {
             return code == null ? View("Error") : View();
@@ -241,6 +254,7 @@ namespace JixhDb.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("ResetPassword")]
         public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model)
         {
             if (!ModelState.IsValid)
@@ -265,6 +279,7 @@ namespace JixhDb.Web.Controllers
         //
         // GET: /Account/ResetPasswordConfirmation
         [AllowAnonymous]
+        [Route("ResetPasswordConfirmation")]
         public ActionResult ResetPasswordConfirmation()
         {
             return View();
@@ -275,6 +290,7 @@ namespace JixhDb.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("ExternalLogin")]
         public ActionResult ExternalLogin(string provider, string returnUrl)
         {
             // Request a redirect to the external login provider
@@ -284,6 +300,7 @@ namespace JixhDb.Web.Controllers
         //
         // GET: /Account/SendCode
         [AllowAnonymous]
+        [Route("SendCode")]
         public async Task<ActionResult> SendCode(string returnUrl, bool rememberMe)
         {
             var userId = await SignInManager.GetVerifiedUserIdAsync();
@@ -301,6 +318,7 @@ namespace JixhDb.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("SendCode")]
         public async Task<ActionResult> SendCode(SendCodeViewModel model)
         {
             if (!ModelState.IsValid)
@@ -319,6 +337,7 @@ namespace JixhDb.Web.Controllers
         //
         // GET: /Account/ExternalLoginCallback
         [AllowAnonymous]
+        [Route("ExternalLoginCallback")]
         public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
         {
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
@@ -351,6 +370,7 @@ namespace JixhDb.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("ExternalLoginConfirmation")]
         public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
         {
             if (User.Identity.IsAuthenticated)
@@ -388,15 +408,17 @@ namespace JixhDb.Web.Controllers
         // POST: /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("LogOff")]
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("GetMovies", "Movies");
         }
 
         //
         // GET: /Account/ExternalLoginFailure
         [AllowAnonymous]
+        [Route("ExternalLoginFailure")]
         public ActionResult ExternalLoginFailure()
         {
             return View();

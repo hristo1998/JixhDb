@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+.cover-photo-details {
+    width: 12vw;
+    margin-left: 12.5vw;
+}

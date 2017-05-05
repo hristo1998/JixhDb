@@ -71,3 +71,7 @@ D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\Micr
 D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\obj\Debug\JixhDb.Web.dll
 D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\obj\Debug\JixhDb.Web.pdb
+D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\AutoMapper.dll
+D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\AutoMapper.xml
+D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\JixhDb.Web.Services.dll
+D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\JixhDb.Web.Services.pdb
