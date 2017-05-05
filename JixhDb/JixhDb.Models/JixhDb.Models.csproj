@@ -117,8 +117,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindingModels\Category\NewCategoryBindingModel.cs" />
     <Compile Include="BindingModels\Movies\EditMovieBidingModel.cs" />
     <Compile Include="BindingModels\Movies\NewMovieBindingModel.cs" />
+    <Compile Include="BindingModels\Review\NewReviewBindingModel.cs" />
     <Compile Include="EntittyModels\ApplicationUser.cs" />
     <Compile Include="EntittyModels\Category.cs" />
     <Compile Include="EntittyModels\Comment.cs" />
@@ -134,6 +136,7 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Category\CategoryViewModel.cs" />
     <Compile Include="ViewModels\ManageAccount\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\ManageAccount\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\ManageAccount\ConfigureTwoFactorViewModel.cs" />
@@ -143,7 +146,10 @@
     <Compile Include="ViewModels\ManageAccount\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\ManageAccount\VerifyPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Movies\MovieDetailsViewModel.cs" />
+    <Compile Include="ViewModels\Movies\MovieSearchViewModel.cs" />
     <Compile Include="ViewModels\Movies\MovieShortInfoViewModel.cs" />
+    <Compile Include="ViewModels\Review\ReviewLinkViewModel.cs" />
+    <Compile Include="ViewModels\Review\ReviewViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Attributes\" />

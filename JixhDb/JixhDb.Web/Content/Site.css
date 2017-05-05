@@ -28,3 +28,7 @@ textarea {
     width: 12vw;
     margin-left: 12.5vw;
 }
+
+.action-link-padding {
+    padding-right: 5px;
+}

@@ -13,9 +13,12 @@ namespace JixhDb.Web
 
             routes.MapRoute(
                 name: "Default",
-                url: "",
+                url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Movies", action = "GetMovies", id = UrlParameter.Optional }
             );
+
+            AreaRegistration.RegisterAllAreas();
+
         }
     }
 }

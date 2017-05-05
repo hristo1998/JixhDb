@@ -1,0 +1,99 @@
+﻿@model JixhDb.Models.ViewModels.Review.ReviewViewModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h2>Review</h2>
+    <hr />
+    <h3>The Movie</h3>
+    <img src="@Html.DisplayFor(model => model.Movie.CoverUrl)" alt="" />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.ReleaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movie.ReleaseDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Duration)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Director)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Director)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Cast)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Cast)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Rating)/10
+        </dd>
+
+    </dl>
+
+    <hr />
+    <h4>Review</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTime)
+        </dd>
+    </dl>
+    
+    <hr/>
+    <h4>Reviwer</h4>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Reviewer.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reviewer.UserName)
+        </dd>
+
+    </dl>
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

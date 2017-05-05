@@ -75,3 +75,11 @@ D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\Auto
 D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\AutoMapper.xml
 D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\JixhDb.Web.Services.dll
 D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\JixhDb.Web.Services.pdb
+D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\System.Web.Http.dll
+D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\JixhDb.API.Services.dll
+D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\System.Net.Http.Formatting.dll
+D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\System.Web.Http.WebHost.dll
+D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\System.Web.Http.xml
+D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\JixhDb.API.Services.pdb
+D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\System.Net.Http.Formatting.xml
+D:\Programming\SoftUni\12.0 C# Web\2.0 ASP.NET\JixhDb\JixhDb\JixhDb.Web\bin\System.Web.Http.WebHost.xml

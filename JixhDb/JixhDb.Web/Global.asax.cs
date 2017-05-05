@@ -1,4 +1,9 @@
-﻿namespace JixhDb.Web
+﻿using JixhDb.Models.BindingModels.Category;
+using JixhDb.Models.BindingModels.Review;
+using JixhDb.Models.ViewModels.Category;
+using JixhDb.Models.ViewModels.Review;
+
+namespace JixhDb.Web
 {
     using System.Collections.Generic;
     using System.Web.Mvc;
@@ -31,7 +36,11 @@
                 ex.CreateMap<Movie, MovieShortInfoViewModel>();
                 ex.CreateMap<NewMovieBindingModel, Movie>();
                 ex.CreateMap<EditMovieBidingModel, Movie>();
-
+                ex.CreateMap<NewCategoryBindingModel, Category>();
+                ex.CreateMap<Category, CategoryViewModel>();
+                ex.CreateMap<CategoryViewModel, Category>();
+                ex.CreateMap<NewReviewBindingModel, Review>();
+                ex.CreateMap<Review, ReviewViewModel>();
             });
         }
     }

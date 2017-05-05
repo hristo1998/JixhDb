@@ -1,0 +1,133 @@
+﻿@model JixhDb.Models.ViewModels.Movies.MovieDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+
+    <img src="@Html.DisplayFor(model => model.CoverUrl)" alt="No Photo " class="cover-photo-details" />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrailerLink)
+        </dt>
+
+        <dd>
+            <iframe width="560" height="315" src="@Html.DisplayFor(model => model.TrailerLink)" frameborder="0" allowfullscreen></iframe>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categories)
+        </dt>
+
+        <dd>
+            @foreach (var cat in @Model.Categories)
+            {
+
+                @Html.ActionLink(cat.Name, "Categories", "Movies", new { category = cat.Name }, new { @class = "action-link-padding" })
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Writers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Writers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cast)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cast)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Storyline)
+        </dt>
+
+        <dd>
+            @Model.Storyline
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)/10
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink("Back to List", "GetMovies")
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        <br />
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id })        <br />
+        @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+    }
+</p>
+
+<hr />
+<h3>Reviews</h3>
+
+    @foreach (var review in @Model.Reviews)
+    {
+        @Html.ActionLink($"{review.Text.Substring(0,14)}...", "Details", "Reviews", new { area = "Reviews" , id = review.Id }, new { @class = "action-link-padding" })
+    }
+
+
+
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Reviewer"))
+    {
+        <br />
+        <br />
+        @Html.ActionLink("Write a review", "Create", "Reviews", new { area = "Reviews", id = Model.Id }, null)
+        
+    }
+
+
+
+

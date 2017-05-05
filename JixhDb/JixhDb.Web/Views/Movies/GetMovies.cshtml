@@ -1,0 +1,87 @@
+﻿@model IEnumerable<JixhDb.Models.ViewModels.Movies.MovieShortInfoViewModel>
+
+@{
+    ViewBag.Title = "JixhDb Movies";
+}
+
+<h2>@ViewBag.Category</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CoverUrl) / @Html.DisplayNameFor(model => model.TrailerLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title) 
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categories)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Director)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cast)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Storyline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <a href="@Html.DisplayFor(modelItem => item.TrailerLink)" target="blank">
+                <img src="@Html.DisplayFor(modelItem => item.CoverUrl)" alt="No Photo Availabe :/" width=" 80px" />
+            </a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+            <br/>
+            (@Html.DisplayFor(modelItem => item.ReleaseDate))
+        </td>
+        <th>
+            @foreach (var cat in item.Categories)
+            {
+                
+                @Html.ActionLink(cat.Name, "Categories", "Movies", new {category = cat.Name}, null)                <br />
+
+            }
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duration)h
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Director)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cast)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Storyline)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.Id })
+            @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+            {
+                <br/>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) <br/>
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+
+            }
+           
+        </td>
+    </tr>
+}
+
+</table>
