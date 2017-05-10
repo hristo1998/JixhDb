@@ -32,3 +32,130 @@ textarea {
 .action-link-padding {
     padding-right: 5px;
 }
+
+
+/*Search css*/
+
+
+
+.search-btn {
+    color: #999999;
+    padding-top: 15px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.search-field-container {
+    width: 20%;
+    float: left;
+    padding-right: 0.7vw;
+    position: relative;
+}
+.search-field {
+    float: right;
+    width: 100%;
+    margin-top: 0.9vw;
+    font-size: 1vw;
+    padding: 0 3% 1%;
+    border-radius: 0.2vw;
+    border: none;
+    background-color: aliceblue;
+}
+
+.nav-search-results-container {
+    position: absolute;
+    width: 102%;
+    background-color: aliceblue;
+    left: -5.99%;
+    top: 107%;
+    border-radius: 0.2vw;
+    border-left: solid 0.1vw #9b9b9b;
+    border-right: solid 0.1vw #9b9b9b;
+    z-index: 1000;
+}
+
+.search-result-field-separator {
+    width: 96.4%;
+    color: #9197a3;
+    font-size: 0.8vw;
+    padding: 1.5% 1.8%;
+    background: rgba(234, 235, 236, 0.76);
+    border-bottom: solid 0.1vw #9b9b9b;
+    border-top: solid 0.1vw #9b9b9b;
+    border-radius: 0.15vw;
+
+}
+
+.nav-search-no-results {
+    cursor: pointer;
+    padding: 5%;
+    color: #9197a3;
+    font-size: 0.8vw;
+}
+
+.nav-search-no-results:hover {
+    color: #f2f0ff;
+    background-color: #9da1a1;
+
+}
+
+.nav-search-result-container {
+    width: 98%;
+    height: 2vw;
+    padding: 1%;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+.nav-search-result-pic {
+    float: left;
+    width: 15%;
+}
+
+.nav-search-result-pic img {
+    width: 100%;
+    height: 2vw;
+}
+
+#hidden-username-container {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.nav-search-info-result {
+    padding-left: 5%;
+    width: 75%;
+    float: left;
+    color: #313131;
+}
+
+.nav-search-profile-info-result-username{
+    padding: 0.5%;
+    font-size: 1.2vw;
+}
+
+.nav-search-profile-info-result-name {
+    padding: 0.5%;
+    font-size: 0.5vw;
+}
+
+.nav-search-article-info-result-title {
+    margin-top: 1.4%;
+    padding: 0.5%;
+    font-size: 0.8vw;
+}
+
+.nav-search-result-container:hover {
+    background-color: #a8a8a8;
+}
+
+.nav-search-result-container:hover .nav-search-info-result{
+    color: rgba(251, 251, 251, 0.7);
+}
+
+.nav-search-article-hidden-id {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}

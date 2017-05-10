@@ -1,12 +1,16 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    @*<script src="https://code.jquery.com/jquery-3.2.1.slim.js"
+            integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
+            crossorigin="anonymous"></script>*@
+    @Scripts.Render("~/bundles/jquery")
+    <script type="text/javascript" src="@Url.Content("~/Scripts/searchField.js")"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -22,7 +26,38 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Category", "Index", "Categories")</li>
+                    
+                    <li class="search-btn">Search</li>
                 </ul>
+                
+                <div class="search-field-container">
+                    <input type="text" class="search-field" placeholder="Search" id="nav-search-field">
+
+                    <div class="nav-search-results-container">
+                        <div class="search-result-field-separator">
+                            People
+                        </div>
+                        <div class="nav-search-results-user-profiles" id="nav-search-results-user-profiles">
+
+                        </div>
+                        <div class="search-result-field-separator">
+                            Articles
+                        </div>
+                        <div class="nav-search-results-articles" id="nav-search-results-articles">
+
+                        </div>
+                    </div>
+
+                    <form action="profile.php" class="nav-search-hidden-submit-form" id="nav-search-hidden-submit-user-form" method="post">
+                        <input type="hidden" name="username" id="nav-hidden-username-search-field" value="">
+                    </form>
+
+                    <form action="article.php" class="nav-search-hidden-submit-form" id="nav-search-hidden-submit-article-form" method="post">
+                        <input type="hidden" name="id" id="nav-hidden-article-search-field" value="">
+                    </form>
+
+                </div>
+
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
@@ -35,8 +70,10 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
+   
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    
 </body>
 </html>
