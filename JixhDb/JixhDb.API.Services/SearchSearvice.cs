@@ -14,12 +14,25 @@ namespace JixhDb.API.Services
         {
             var movies = this.Context.Movies.Where(movie => movie.Title.Contains(search));
 
-            if (movies.Count() > i)
+            if (movies.Any())
             {
-                movies = movies.Take(i);
-            }
+                if (movies.Count() > i)
+                {
+                    movies = movies.Take(i);
+                }
 
-            return Mapper.Map<IEnumerable<Movie>, IEnumerable<MovieSearchViewModel>>(movies);
+                var searchRes = Mapper.Map<IEnumerable<Movie>, IEnumerable<MovieSearchViewModel>>(movies);
+                foreach (var movie in searchRes)
+                {
+                    
+                }
+                return searchRes;
+
+            }
+            
+
+            return null;
+
         }
     }
 }

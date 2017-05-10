@@ -8,7 +8,7 @@ using JixhDb.API.Services;
 
 namespace JixhDb.Web.Controllers
 {
-    [RoutePrefix("api")]
+    [RoutePrefix("api/search")]
     public class SearchController : ApiController
     {
         private readonly SearchSearvice _service;
@@ -24,7 +24,15 @@ namespace JixhDb.Web.Controllers
         public IHttpActionResult Get(string search)
         {
             var vm = this._service.GetAll(3, search);
-            return this.Ok(vm);
+            if (vm == null)
+            {
+                return this.NotFound();
+            }
+            else
+            {
+                return this.Ok(vm);
+            }
+            
         }
     }
 }

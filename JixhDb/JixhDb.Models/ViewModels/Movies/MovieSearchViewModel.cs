@@ -2,6 +2,7 @@
 {
     public class MovieSearchViewModel
     {
+        public string MovieUrl { get; set; }
 
         public string CoverUrl { get; set; }
 

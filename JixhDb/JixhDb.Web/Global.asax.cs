@@ -1,4 +1,5 @@
-﻿using JixhDb.Models.BindingModels.Category;
+﻿using System.Web.Http;
+using JixhDb.Models.BindingModels.Category;
 using JixhDb.Models.BindingModels.Review;
 using JixhDb.Models.ViewModels.Category;
 using JixhDb.Models.ViewModels.Review;
@@ -22,9 +23,12 @@ namespace JixhDb.Web
         {
             ConfigureMappings();
             AreaRegistration.RegisterAllAreas();
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.Indent = true;
+
         }
 
 
@@ -41,6 +45,8 @@ namespace JixhDb.Web
                 ex.CreateMap<CategoryViewModel, Category>();
                 ex.CreateMap<NewReviewBindingModel, Review>();
                 ex.CreateMap<Review, ReviewViewModel>();
+                ex.CreateMap<Movie, MovieSearchViewModel>()
+                .ForMember(vm => vm.MovieUrl, opt => opt.MapFrom( src => "Movies/" + src.Id));
             });
         }
     }
