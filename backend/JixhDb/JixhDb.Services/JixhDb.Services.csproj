@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Category\" />
+    <Folder Include="Comment\" />
+    <Folder Include="Movie\" />
+    <Folder Include="NewFolder\" />
+    <Folder Include="Review\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JixhDb.Data\JixhDb.Data.csproj" />
+    <ProjectReference Include="..\JixhDb.Models\JixhDb.Models.csproj" />
+  </ItemGroup>
+
+</Project>

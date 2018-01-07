@@ -1,0 +1,137 @@
+
+*--TASKS--*
+-login Y
+-get user Y
+-register user Y
+-modify user Y
+-delete user Y
+
+
+admins
+-force user to modify profile Y
+-modify user Y 
+-delete user Y
+-add to role Y
+-remove from role Y
+
+movies
+-add movie Y
+-remove movie Y
+-reviews Y
+-rating Y
+-comment Y
+-category Y
+-movie Y
+-seach 
+-actors Y
+
+actors
+-add actor
+-remove actor
+-rating
+-comments
+
+*--TABS--*
+MOVIE
+USER
+HOME PAGE - dysplaying abit of discover and some category
+DISCOVER
+CATEGORY
+
+
+*--CONTROLLERS--*
+-TokenController
+	[public]	POST /api/login - Verifies User's credentials and returns a JWT token with the coresponing claims 
+-User/AccountConctroller
+	[public]	GET /api/users/  - List Users (Probably limited amount)
+	[public]	GET /api/users/{id} - Returns Specific User
+	[public]	POST /api/users - Registers a new User
+	[User]		PUT /api/users/{id} - Updates an existing User
+	[User][Admin]	DELETE /api/users/{id} - Deletes an existing User
+-MovieController
+	[public]	GET /api/movies - Get All Movies
+	[public]	GET /api/movies/{id} - Get specific movie
+	[MovieModerator] POST /api/movies - Create a movie
+	[MovieModerator] PUT /api/moives/{id} - Edit a movie
+	[MovieModerator] DELETE /api/movies/{id} - Delete a movie
+-CategoryController
+	[public]	GET /api/categories - Get all categories
+	[public]	GET /api/categories/{id} - Get a specific category
+	[MovieModerator] POST /api/categories - Create a category
+	[MovieModerator] PUT /api/categorues/{id} - Edit a category
+	[MovieModerator] DELETE /api/categories/{id} - Delete category
+-CommentController
+	[public]	GET /api/comments - Get all comments /add functionallity to get comments for a sertain movie only/
+	[public]	GET /api/comments/{id} - Get a specific comment
+	[User]		POST /api/comments - Create a comment
+	[User][Moderator][Admin] PUT /api/comments/{id} - Edit a comment
+	[User][Moderator][Admin] DELETE /api/comments/{id} - Delete a comment
+-ReviewController
+	[public]	GET /api/reviews - Get all reviews /add functionallity to get reviews only for a certain move/
+	[public]	GET /api/reviews/{id} - Get a specific review
+	[User]		POST /api/reviews - Create a review/
+	[User][Moderator][Admin] PUT /api/reviews{id} - Edit a review
+	[User][Moderator][Admin] DELETE /api/review/{id} - Delete a review
+
+-AdminController [Admin]
+	POST /api/admin/user/modify - set the user for modifing a filed/fileds
+	POST /api/admin/user/edit - edit user
+	DELETE /api/admin/user/{id} - delete user
+	POST /api/admin/user/addtorole - add user to a role
+	POST /api/admin/user/removefromrole - remove user from a role
+-Rate
+	POST /api/rate/movie - rate a movie
+	PUT /api/rate/movie - edit rate on a movie
+	DELETE /api/rate/movie - delete a rate on a movie
+	POST /api/rate/comment - thumbs up or down on a commnet
+	DELETE /api/rate/comment - remove thumbs on a comment
+	POST /api/rate/review - thumbs up or down on a review
+	DELETE /api/rate/review - remove thumbs on a review
+
+*--DATABASE--*
+-Roles
+	[User] - See Movies, Read Reviews, Browse Caregories, Discover
+	[Moderator] - moderate comments and reviews
+	[MovieModerator] - CRUD on movies
+	[Admin] - everything
+-User
+	Email
+	Phone
+	UserName
+	-----
+	ProfilePicture
+	Age
+	Gender
+	
+	MarkedToChange
+	FiledToChange
+-Movie
+	Title	
+	TrailerLink	
+	CoverUrl
+	ReleaseDate
+	Duration
+	Categories
+	Director	
+	Screen Writers
+	Cast
+	StoryLine
+	Rating
+-Category
+	Name
+	Description	
+-Comment
+	Title
+	User
+	Movie
+	CommentIteself
+	Date
+	Rating
+-Review
+	Title
+	User - Reviewer
+	Movie
+	ReviewItself
+	Date
+	Rating
+

@@ -1,0 +1,11 @@
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Data\bin\Debug\netcoreapp2.0\JixhDb.Data.deps.json
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Data\bin\Debug\netcoreapp2.0\JixhDb.Data.dll
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Data\obj\Debug\netcoreapp2.0\JixhDb.Data.csprojResolveAssemblyReference.cache
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Data\obj\Debug\netcoreapp2.0\JixhDb.Data.csproj.CoreCompileInputs.cache
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Data\obj\Debug\netcoreapp2.0\JixhDb.Data.AssemblyInfoInputs.cache
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Data\obj\Debug\netcoreapp2.0\JixhDb.Data.AssemblyInfo.cs
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Data\bin\Debug\netcoreapp2.0\JixhDb.Models.dll
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Data\bin\Debug\netcoreapp2.0\JixhDb.Data.pdb
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Data\bin\Debug\netcoreapp2.0\JixhDb.Models.pdb
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Data\obj\Debug\netcoreapp2.0\JixhDb.Data.dll
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Data\obj\Debug\netcoreapp2.0\JixhDb.Data.pdb
