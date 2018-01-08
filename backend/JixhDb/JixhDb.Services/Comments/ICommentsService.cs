@@ -16,8 +16,6 @@
 
         Comment GetCommentById(string id);
 
-        Comment GetCommentByModel(CommentBindingModel comment);
-
         Task<ServiceResult> Create(User user, Movie movie, CommentBindingModel model);
 
         Task<ServiceResult> Update(Comment comment, CommentBindingModel model);

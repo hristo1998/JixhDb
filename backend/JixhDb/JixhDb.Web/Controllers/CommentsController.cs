@@ -143,7 +143,7 @@
 
             if (result.Succeeded)
             {
-                return Ok();
+                return NoContent();
             }
 
             return BadRequest();

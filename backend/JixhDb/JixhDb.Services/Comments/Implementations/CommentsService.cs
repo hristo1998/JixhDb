@@ -1,5 +1,6 @@
 ﻿namespace JixhDb.Services.Comments.Implementations
 {
+    using System;
     using System.Linq;
     using System.Collections.Generic;
     using System.Threading.Tasks;
@@ -26,9 +27,11 @@
         public List<Comment> GetMovieComments(Movie movie) 
             => movie.Comments.ToList();
 
-        public string GetCommentByIdJson(string id) => JsonConvert.SerializeObject(this.GetCommentById(id));
+        public string GetCommentByIdJson(string id) 
+            => JsonConvert.SerializeObject(this.GetCommentById(id));
 
-        public Comment GetCommentById(string id) => this.db.Comments.FirstOrDefault(c => c.Id == id);
+        public Comment GetCommentById(string id) 
+            => this.db.Comments.FirstOrDefault(c => c.Id == id);
 
         public async Task<ServiceResult> Create(User user, Movie movie, CommentBindingModel model)
         {
@@ -39,7 +42,8 @@
                 Movie = movie,
                 MovieId = movie.Id,
                 User = user,
-                UserId = user.Id
+                UserId = user.Id,
+                DateCreated = DateTime.Now
             };
 
             Mapper.Map(model, comment);

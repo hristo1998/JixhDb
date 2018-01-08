@@ -2,15 +2,15 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
-
+    using JixhDb.Common.Mapping;
+    using JixhDb.Models.BindingModels.Review;
     using static Helpers.DataConstants;
 
 
-    public class Review
+    public class Review : IMapFrom<ReviewBindingModel>
     {
         [Key]
         public string Id { get; set; }
-
             
         [MinLength(StringMinLength)]
         [MaxLength(StringMaxLength)]
