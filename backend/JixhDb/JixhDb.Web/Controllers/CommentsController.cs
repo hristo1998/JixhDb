@@ -9,7 +9,7 @@
     using JixhDb.Models.BindingModels.Comments;
     using JixhDb.Models.EntityModels;
 
-    [Route("api/[controller]")]
+    [Route("api/comments")]
     public class CommentsController : Controller
     {
 
@@ -44,7 +44,7 @@
 
         // Get specific movie comment
         // GET /api/comments/{id}
-        [HttpGet("{id}", Name = "GetUser")]
+        [HttpGet("{id}", Name = "GetComment")]
         public IActionResult GetById(string id)
         {
             var comment = this._commentsService.GetCommentByIdJson(id);

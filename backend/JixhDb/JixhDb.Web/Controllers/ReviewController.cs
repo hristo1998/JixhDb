@@ -9,7 +9,7 @@
     using JixhDb.Models.BindingModels.Review;
     using JixhDb.Models.EntityModels;
 
-    [Route("api/[controller]")]
+    [Route("api/reviews")]
     public class ReviewController : Controller
     {
         private readonly UserManager<User> _userManager;
@@ -44,7 +44,7 @@
 
         // Get specific movie review
         // GET /api/comments/{id}
-        [HttpGet("{id}", Name = "GetUser")]
+        [HttpGet("{id}", Name = "GetReview")]
         public IActionResult GetById(string id)
         {
             var review = this._reviewService.GetReviewByIdJson(id);

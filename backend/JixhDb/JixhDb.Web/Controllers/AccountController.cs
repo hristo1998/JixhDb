@@ -10,7 +10,7 @@
     using static JixhDb.Common.GlobalConstants;
     using Newtonsoft.Json;
 
-    [Route("api/[controller]")]
+    [Route("api/account")]
     public class AccountController : Controller
     {
         private readonly IUserService _userService;
