@@ -6,7 +6,7 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { Configs } from '../../../shared/configs';
+import { Configs } from '../../shared/configs';
 import { StorageService } from './storage.service';
 
 
@@ -20,11 +20,8 @@ export class HttpService {
     private storageService: StorageService) { }
 
   private createRequestOptions(httpMethod: string): RequestOptions {
-    // const token = this.storageService.retrieve(Configs.tokenStorageKey);
-    // const graphToken = this.storageService.retrieve(Configs.graphStorageKey);
-
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdEB0ZXN0LmNvbSIsIm5iZiI6IjE1MTUxNjkwMjYiLCJleHAiOiIxNTE1MjU1NDI2In0.UDHi5BONkRJISwlXoO3LpfvX1W5-Htxd0osByQ2U72E';
-
+    const token = this.storageService.retrieve(Configs.tokenStorageKey);
+   
     return new RequestOptions({
       headers: new Headers({
         'Content-Type': 'application/json',
@@ -72,13 +69,11 @@ export class HttpService {
   private handleError(err: HttpErrorResponse): Observable<any> {
     if (err.error instanceof Error) {
       // A client-side or network error occurred. Handle it accordingly.
-      // console.log('An error occurred:', err.error.message);
-      console.log('general.error-occured');
+      console.log('An error occurred:', err.error.message);
     } else {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong,
-      // console.log(`Backend returned code ${err.status}, body was: ${err.error}`);
-      console.log(err.statusText);
+      console.log(`Backend returned code ${err.status}, body was: ${err.error}`);
     }
 
     return Observable.throw(err);

@@ -1,12 +1,13 @@
 ﻿namespace JixhDb.Models.EntityModels
-{
+{    
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
+    using JixhDb.Common.Mapping;
+    using JixhDb.Models.BindingModels.Movies;
     using static Helpers.DataConstants;
 
-    public class Movie
+    public class Movie : IMapFrom<MovieBindingModel>
     {
         [Key]
         public string Id { get; set; }

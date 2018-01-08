@@ -1,12 +1,14 @@
 ﻿
 namespace JixhDb.Models.EntityModels
-{
+{   
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using JixhDb.Common.Mapping;
+    using JixhDb.Models.BindingModels.Category;
 
     using static Helpers.DataConstants;
 
-    public class Category
+    public class Category : IMapFrom<CategoryBindingModel>
     {
         [Key]
         public string Id { get; set; }

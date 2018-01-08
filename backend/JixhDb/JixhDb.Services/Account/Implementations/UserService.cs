@@ -7,6 +7,8 @@ namespace JixhDb.Services.Account.Implementations
     using JixhDb.Services.Helpers;
     using JixhDb.Models.BindingModels.User;
     using AutoMapper;
+    using System.Collections.Generic;
+    using JixhDb.Models.EntityModels;
 
     public class UserService : IService, IUserService
     {
@@ -17,11 +19,9 @@ namespace JixhDb.Services.Account.Implementations
             this.db = db;
         }
 
-        public async Task<ServiceResult> UpdateUserAsync(string id, EditUserBindingModel model)
+        public async Task<ServiceResult> UpdateUserAsync(User user, EditUserBindingModel model)
         {
-            var result = new ServiceResult();
-
-            var user = this.db.Users.FirstOrDefault(u => u.Id == id);
+            var result = new ServiceResult();            
 
             user.Email = model.Email;
             user.UserName = model.UserName;
@@ -40,6 +40,11 @@ namespace JixhDb.Services.Account.Implementations
             }
 
             return result;
+        }
+
+        public List<User> GetAllUsers()
+        {
+            return db.Users.ToList();
         }
 
     }

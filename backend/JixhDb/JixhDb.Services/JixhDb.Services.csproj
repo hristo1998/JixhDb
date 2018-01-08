@@ -10,9 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Category\" />
-    <Folder Include="Comment\" />
-    <Folder Include="Movie\" />
     <Folder Include="NewFolder\" />
     <Folder Include="Review\" />
   </ItemGroup>

@@ -7,3 +7,9 @@ D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Services\obj\Debug\n
 D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Services\bin\Debug\netcoreapp2.0\JixhDb.Services.pdb
 D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Services\obj\Debug\netcoreapp2.0\JixhDb.Services.dll
 D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Services\obj\Debug\netcoreapp2.0\JixhDb.Services.pdb
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Services\bin\Debug\netcoreapp2.0\JixhDb.Common.dll
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Services\bin\Debug\netcoreapp2.0\JixhDb.Data.dll
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Services\bin\Debug\netcoreapp2.0\JixhDb.Models.dll
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Services\bin\Debug\netcoreapp2.0\JixhDb.Data.pdb
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Services\bin\Debug\netcoreapp2.0\JixhDb.Models.pdb
+D:\programming\.NET Core Kenov\JixhDb\backend\JixhDb\JixhDb.Services\bin\Debug\netcoreapp2.0\JixhDb.Common.pdb

@@ -42,7 +42,8 @@
             {
                 options.DefaultAuthenticateScheme = "JwtBearer";
                 options.DefaultChallengeScheme = "JwtBearer";
-            });
+            })
+            .AddCustomJwt();
             
 
             // Add CORS service and create Policy with options
@@ -74,6 +75,8 @@
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseDatabaseMigration();
 
             app.UseStaticFiles();
 
