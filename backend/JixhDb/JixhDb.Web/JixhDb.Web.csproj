@@ -27,9 +27,4 @@
     <ProjectReference Include="..\JixhDb.Services\JixhDb.Services.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\Admin\" />
-    <Folder Include="Areas\Moderator\" />
-  </ItemGroup>
-
 </Project>

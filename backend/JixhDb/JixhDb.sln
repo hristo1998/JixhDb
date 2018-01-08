@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JixhDb.Models", "JixhDb.Mod
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JixhDb.Data", "JixhDb.Data\JixhDb.Data.csproj", "{BF9D8B18-4317-4CFC-B38A-A96043F8877F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JixhDb.Common", "JixhDb.Common\JixhDb.Common.csproj", "{43126B85-AE50-4068-9736-E3A7E7A78620}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JixhDb.Common", "JixhDb.Common\JixhDb.Common.csproj", "{43126B85-AE50-4068-9736-E3A7E7A78620}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JixhDb.Test", "JixhDb.Test\JixhDb.Test.csproj", "{C6BA5E94-4DB4-428D-8E2D-73B2CEFB9049}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{43126B85-AE50-4068-9736-E3A7E7A78620}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43126B85-AE50-4068-9736-E3A7E7A78620}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43126B85-AE50-4068-9736-E3A7E7A78620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6BA5E94-4DB4-428D-8E2D-73B2CEFB9049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6BA5E94-4DB4-428D-8E2D-73B2CEFB9049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6BA5E94-4DB4-428D-8E2D-73B2CEFB9049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6BA5E94-4DB4-428D-8E2D-73B2CEFB9049}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

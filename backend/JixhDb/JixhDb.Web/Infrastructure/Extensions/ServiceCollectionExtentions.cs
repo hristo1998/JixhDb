@@ -1,14 +1,14 @@
 ﻿namespace JixhDb.Web.Infrastructure.Extensions
 {
-    using Microsoft.Extensions.DependencyInjection;
-    using JixhDb.Services;
     using System.Linq;
     using System.Reflection;
+    using Microsoft.Extensions.DependencyInjection;
+    using JixhDb.Services;
+    
 
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddDomainServices(
-            this IServiceCollection services)
+        public static IServiceCollection AddDomainServices(this IServiceCollection services)
         {
             Assembly
                 .GetAssembly(typeof(IService))

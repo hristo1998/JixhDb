@@ -39,7 +39,7 @@
 
             var result = await this._userService.MarkField(user, model.Field);
 
-            if (result.Succeded)
+            if (result.Succeeded)
             {
                 return Ok();
             }

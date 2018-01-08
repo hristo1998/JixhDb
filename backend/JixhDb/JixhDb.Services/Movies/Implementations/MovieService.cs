@@ -117,6 +117,7 @@
             {
                 movie.Ratings.Add(movieRaiting);
                 movie.Rating = movie.Ratings.Sum(r => r.Rate) / movie.Ratings.Count;
+                await this.db.SaveChangesAsync();
                 result.Succeeded = true;
             }
             catch (DbUpdateException ex)
@@ -138,6 +139,7 @@
             {
                 movie.Ratings.Remove(movieRaiting);
                 movie.Rating = movie.Ratings.Sum(r => r.Rate) / movie.Ratings.Count;
+                await this.db.SaveChangesAsync();
                 result.Succeeded = true;
             }
             catch (DbUpdateException ex)

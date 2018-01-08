@@ -10,11 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="NewFolder\" />
-    <Folder Include="Review\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\JixhDb.Data\JixhDb.Data.csproj" />
     <ProjectReference Include="..\JixhDb.Models\JixhDb.Models.csproj" />
   </ItemGroup>
