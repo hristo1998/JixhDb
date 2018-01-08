@@ -1,7 +1,7 @@
 ﻿namespace JixhDb.Web.Areas.Admin
 {
     using System.Threading.Tasks;
-    
+
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
@@ -26,7 +26,29 @@
             _userManager = userManager;
         }
 
+        [HttpPost]
+        [Route("modify")]
+        public async Task<IActionResult> MarkForModify([FromBody] ModifyUserBindingModel model)
+        {
+            var user = await this._userManager.FindByIdAsync(model.UserId);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var result = await this._userService.MarkField(user, model.Field);
+
+            if (result.Succeded)
+            {
+                return Ok();
+            }
+
+            return BadRequest();
+        }
+
         [HttpPut("{id}")]
+        //[Route("update")]
         public async Task<IActionResult> Update(string id, [FromBody] EditUserBindingModel model)
         {
             if (ModelState.IsValid)
@@ -63,6 +85,7 @@
         }
 
         [HttpDelete("{id}")]
+        //[Route("delete")]
         public async Task<IActionResult> Delete(string id)
         {
             var user = await _userManager.FindByIdAsync(id);

@@ -99,5 +99,54 @@
 
             return result;
         }
+
+        public async Task<ServiceResult> Rate(Movie movie, User user, double rating)
+        {
+            var result = new ServiceResult();
+
+            var movieRaiting = new MovieRaiting
+            {
+                User = user,
+                UserId = user.Id,
+                Movieid = movie.Id,
+                Rate = rating
+            };
+            movieRaiting.Movie = movie;
+
+            try
+            {
+                movie.Ratings.Add(movieRaiting);
+                movie.Rating = movie.Ratings.Sum(r => r.Rate) / movie.Ratings.Count;
+                result.Succeeded = true;
+            }
+            catch (DbUpdateException ex)
+            {
+                result.Succeeded = false;
+                result.Error = ex.Message;
+            }
+
+            return result;
+        }
+
+        public async Task<ServiceResult> UnRate(Movie movie, User user)
+        {
+            var result = new ServiceResult();
+
+            var movieRaiting = await this.db.MovieRatings.FirstOrDefaultAsync(mr => mr.Movieid == movie.Id && mr.UserId == user.Id);
+
+            try
+            {
+                movie.Ratings.Remove(movieRaiting);
+                movie.Rating = movie.Ratings.Sum(r => r.Rate) / movie.Ratings.Count;
+                result.Succeeded = true;
+            }
+            catch (DbUpdateException ex)
+            {
+                result.Succeeded = false;
+                result.Error = ex.Message;
+            }
+
+            return result;
+        }
     }
 }

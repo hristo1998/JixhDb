@@ -101,5 +101,51 @@
 
             return result;
         }
+
+        public async Task<ServiceResult> Rate(Comment comment, User user)
+        {
+            var result = new ServiceResult();
+
+            try
+            {
+                if (user.CommentsRated.Any(cr => cr.Id != comment.Id))
+                {
+                    comment.Rating++;
+                    user.CommentsRated.Add(comment);
+                    await this.db.SaveChangesAsync();
+                    result.Succeeded = true;
+                }
+            }
+            catch (DbUpdateException ex)
+            {
+                result.Succeeded = false;
+                result.Error = ex.Message;
+            }
+
+            return result;
+        }
+
+        public async Task<ServiceResult> UnRate(Comment comment, User user)
+        {
+            var result = new ServiceResult();
+
+            try
+            {
+                if (user.CommentsRated.Any(cr => cr.Id == comment.Id))
+                {
+                    comment.Rating--;
+                    user.CommentsRated.Add(comment);
+                    await this.db.SaveChangesAsync();
+                    result.Succeeded = true;
+                }
+            }
+            catch (DbUpdateException ex)
+            {
+                result.Succeeded = false;
+                result.Error = ex.Message;
+            }
+
+            return result;
+        }
     }
 }

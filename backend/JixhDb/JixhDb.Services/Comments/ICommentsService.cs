@@ -21,5 +21,9 @@
         Task<ServiceResult> Update(Comment comment, CommentBindingModel model);
 
         Task<ServiceResult> Delete(Comment comment);
+
+        Task<ServiceResult> Rate(Comment comment, User user);
+
+        Task<ServiceResult> UnRate(Comment comment, User user);
     }
 }

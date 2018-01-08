@@ -29,6 +29,8 @@ namespace JixhDb.Services.Account.Implementations
             user.Gender = model.Gender;
             user.HomeTown = model.HomeTown;
 
+            // add functionallity to remove filed for change mark if such a field is being modified.
+
             try
             {
                 var res = await this.db.SaveChangesAsync();
@@ -47,5 +49,23 @@ namespace JixhDb.Services.Account.Implementations
             return db.Users.ToList();
         }
 
+        public async Task<ServiceResult> MarkField(User user, string field)
+        {
+            var result = new ServiceResult();          
+
+            try
+            {
+                user.FieldForChange = field;
+                user.MarkedForChange = true;
+                var res = await this.db.SaveChangesAsync();
+                result.Succeeded = true;
+            }
+            catch (System.Exception ex)
+            {
+                result.Error = ex.Message;
+            }
+
+            return result;
+        }
     }
 }

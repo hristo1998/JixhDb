@@ -11,5 +11,7 @@
         Task<ServiceResult> UpdateUserAsync(User user, EditUserBindingModel model);
 
         List<User> GetAllUsers();
+
+        Task<ServiceResult> MarkField(User user, string field);
     }
 }

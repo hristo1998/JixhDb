@@ -21,5 +21,9 @@
         Task<ServiceResult> Update(Movie movie, MovieBindingModel model);
 
         Task<ServiceResult> Delete(Movie model);
+
+        Task<ServiceResult> Rate(Movie movie, User user, double rating);
+
+        Task<ServiceResult> UnRate(Movie movie, User user);
     }
 }
