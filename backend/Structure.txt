@@ -41,7 +41,7 @@ CATEGORY
 
 *--CONTROLLERS--*
 -TokenController
-	[public]	POST /api/login - Verifies User's credentials and returns a JWT token with the coresponing claims 
+	[public]	POST /api/token/token - Verifies User's credentials and returns a JWT token with the coresponing claims 
 -User/AccountConctroller
 	[public]	GET /api/users/  - List Users (Probably limited amount)
 	[public]	GET /api/users/{id} - Returns Specific User

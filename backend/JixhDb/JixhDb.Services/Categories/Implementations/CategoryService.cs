@@ -49,7 +49,6 @@
             {
                 result.Succeeded = false;
                 result.Error = ex.Message;
-                throw;
             }
 
             return result;
