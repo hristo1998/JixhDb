@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { RegisterUser } from '../../core/models/auth/RegisterUser';
-import { UserService } from '../../core/services/users/user.service';
+import { AuthService } from '../../core/services/auth/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -11,18 +12,33 @@ import { UserService } from '../../core/services/users/user.service';
 export class RegisterComponent implements OnInit {
 
   user: RegisterUser;
+  formGroup: FormGroup;
 
-  constructor(private userService: UserService) { }
+  constructor(private authService: AuthService) { }
 
   register() {
-    console.log(this.user);
-    this.userService.register(this.user)
-    .subscribe(res => console.log(res),
-    error=> console.log(error));
+    let result = this.authService.register(this.user);
   }
 
   ngOnInit() {
     this.user = new RegisterUser();
+
+    this.formGroup = new FormGroup({
+      email: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/)
+      ]),
+      password: new FormControl('', [
+        Validators.required
+      ]),
+      username: new FormControl('', [
+        Validators.required
+      ]),
+      repeatPassword: new FormControl('', [
+        Validators.required,
+        Validators.pattern(this.user.Password)
+      ])
+    });
   }
 
 }

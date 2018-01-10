@@ -7,13 +7,20 @@ import { HttpModule } from '@angular/http';
 
 import { appModuleComponents, AppComponent } from './components/index';
 import { ServiceModule } from './core/services/service.module';
-import { AdminComponent } from './components/admin/admin.component';
+import { GuardsModule } from './core/guards/guards.module';
+import { AdminUserComponent } from './components/admin/admin-user/admin-user.component';
+import { AddMovieComponent } from './components/moviemoderator/add-movie/add-movie.component';
+import { AddCategoryComponent } from './components/moviemoderator/add-category/add-category.component';
+import { MovieComponent } from './components/home/movie/movie.component';
 
 
 @NgModule({
   declarations: [
     ...appModuleComponents,
-    AdminComponent
+    AdminUserComponent,
+    AddMovieComponent,
+    AddCategoryComponent,
+    MovieComponent,
   ],
   imports: [
     routing,
@@ -21,7 +28,8 @@ import { AdminComponent } from './components/admin/admin.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    HttpModule
+    HttpModule,
+    GuardsModule
   ],
   bootstrap: [AppComponent]
 })

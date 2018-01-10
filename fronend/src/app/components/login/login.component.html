@@ -2,7 +2,8 @@
   <h4 class="margin-btm-20">Use your local account to log in</h4>
   <div class="form-group" [class.has-error]="formGroup.get('email').errors">
     <div class="col-md-12">
-      <input class="form-control logincontrol" id="Email" name="Email" placeholder="Email" [(ngModel)]="user.Email" formControlName="email" type="text" value="" />
+      <input class="form-control logincontrol" id="Email" name="Email" placeholder="Email" [(ngModel)]="user.Email" formControlName="email"
+        type="text" value="" />
       <div class="errors" *ngIf="formGroup.get('email').dirty">
         <div class="text-danger" [hidden]="formGroup.get('email').errors == null || formGroup.get('email').errors['required'] == null">Email is required.</div>
         <div class="text-danger" [hidden]="formGroup.get('email').errors == null || formGroup.get('email').errors['pattern'] == null">Email is invalid.</div>
@@ -11,15 +12,16 @@
   </div>
   <div class="form-group" [class.has-error]="formGroup.get('password').errors">
     <div class="col-md-12">
-      <input class="form-control logincontrol" id="Password" name="Password" formControlName="password" [(ngModel)]="user.Password" placeholder="Password" type="password" />
+      <input class="form-control logincontrol" id="Password" name="Password" formControlName="password" [(ngModel)]="user.Password"
+        placeholder="Password" type="password" />
       <div class="errors" *ngIf="formGroup.get('password').dirty">
         <div class="text-danger" [hidden]="formGroup.get('password').errors == null || formGroup.get('password').errors['required'] == null">Password is required.</div>
       </div>
     </div>
-  </div>  
+  </div>
   <div class="form-group">
     <div class=" col-md-10">
-      <input type="submit" [disabled]="formGroup.status !== 'VALID'" value="Sign in" class="btn btn-default btn-local-login"/>
+      <input type="submit" [disabled]="formGroup.status !== 'VALID'" value="Sign in" class="btn btn-default btn-local-login" />
     </div>
   </div>
   <p>

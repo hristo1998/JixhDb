@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { UserService } from '../services/users/user.service';
+import { AuthService } from '../../services/auth/auth.service';
+
 
 @Injectable()
 export class GuestGuard implements CanActivate {
   canActivate(): boolean {
-    if (this.user.checkLoggedIn()) {
+    if (!this.authService.isLoggedIn()) {
       return true;
     } else {
-      this.router.navigateByUrl('teams');
+      this.router.navigateByUrl('');
     }
     
     return false;
   }
 
-  constructor(private user: UserService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 }

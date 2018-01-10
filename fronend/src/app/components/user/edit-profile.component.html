@@ -1,0 +1,80 @@
+<form [formGroup]="formGroup" class="form-horizontal" role="form" (ngSubmit)="edit()">
+    <h4 class="margin-btm-20">Edit your profile</h4>
+    <div class="form-group" [class.has-error]="formGroup.get('email').errors">
+        <div class="col-md-12">
+            <input class="form-control" id="Email" name="Email" placeholder="Email" [(ngModel)]="user.email" type="text" value="" formControlName="email"
+            />
+            <div class="errors" *ngIf="formGroup.get('email').dirty">
+                <div class="text-danger" [hidden]="formGroup.get('email').errors == null || formGroup.get('email').errors['required'] == null">Email is required.</div>
+                <div class="text-danger" [hidden]="formGroup.get('email').errors == null || formGroup.get('email').errors['pattern'] == null">Email is invalid.</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group" [class.has-error]="formGroup.get('userName').errors">
+        <div class="col-md-12">
+            <input class="form-control" id="username" name="username" placeholder="Username" [(ngModel)]="user.userName" type="text"
+                formControlName="userName" />
+            <div class="errors" *ngIf="formGroup.get('email').dirty">
+                <div class="text-danger" [hidden]="formGroup.get('userName').errors == null || formGroup.get('userName').errors['required'] == null">Username is required.</div>
+                <div class="text-danger" [hidden]="formGroup.get('userName').errors == null || formGroup.get('userName').errors['pattern'] == null">Username is invalid.</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group" [class.has-error]="formGroup.get('phoneNumber').errors">
+        <div class="col-md-12">
+            <input class="form-control" id="PhoneNumber" name="PhoneNumber" placeholder="Phone Number" [(ngModel)]="user.phoneNumber"
+                type="text" formControlName="phoneNumber" />
+            <div class="errors" *ngIf="formGroup.get('email').dirty">
+                <div class="text-danger" [hidden]="formGroup.get('phoneNumber').errors == null || formGroup.get('phoneNumber').errors['required'] == null">Phone is required.</div>
+                <div class="text-danger" [hidden]="formGroup.get('phoneNumber').errors == null || formGroup.get('phoneNumber').errors['pattern'] == null">Phone is invalid.</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group" [class.has-error]="formGroup.get('age').errors">
+        <div class="col-md-12">
+            <input class="form-control" id="Age" name="Age" placeholder="Age" [(ngModel)]="user.age" type="text" 
+            formControlName="age" />
+            <div class="errors" *ngIf="formGroup.get('age').dirty">
+                <div class="text-danger" [hidden]="formGroup.get('age').errors == null || formGroup.get('age').errors['required'] == null">Age is required.</div>
+                <div class="text-danger" [hidden]="formGroup.get('age').errors == null || formGroup.get('age').errors['pattern'] == null">Age is invalid.</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group" [class.has-error]="formGroup.get('gender').errors">
+        <div class="col-md-12">
+            <input class="form-control" id="Gender" name="Gender" placeholder="Gender" [(ngModel)]="user.gender" type="text" 
+            formControlName="gender"/>
+            <div class="errors" *ngIf="formGroup.get('gender').dirty">
+                <div class="text-danger" [hidden]="formGroup.get('gender').errors == null || formGroup.get('gender').errors['required'] == null">Gender is required.</div>
+                <div class="text-danger" [hidden]="formGroup.get('gender').errors == null || formGroup.get('gender').errors['pattern'] == null">Gender is invalid.</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group" [class.has-error]="formGroup.get('homeTown').errors">
+        <div class="col-md-12">
+            <input class="form-control" id="HomeTown" name="HomeTown" placeholder="Home Town" [(ngModel)]="user.homeTown" type="text"
+            formControlName="homeTown"/>
+            <div class="errors" *ngIf="formGroup.get('homeTown').dirty">
+                <div class="text-danger" [hidden]="formGroup.get('homeTown').errors == null || formGroup.get('homeTown').errors['required'] == null">Town is required.</div>
+                <div class="text-danger" [hidden]="formGroup.get('homeTown').errors == null || formGroup.get('homeTown').errors['pattern'] == null">Town is invalid.</div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="form-group" *ngIf="showPasswordField" [class.has-error]="formGroup.get('password').errors">
+        <div class="col-md-12">
+            <p class="text-danger">Enter your password in order to change your profile info.</p>
+            <input class="form-control" id="Password" name="Password" placeholder="Password" [(ngModel)]="user.password" type="password"
+            formControlName="password" />
+            <div class="errors" *ngIf="formGroup.get('password').dirty">
+                <div class="text-danger" [hidden]="formGroup.get('password').errors == null || formGroup.get('password').errors['required'] == null">Password is required.</div>
+                <div class="text-danger" [hidden]="formGroup.get('password').errors == null || formGroup.get('password').errors['pattern'] == null">Password is invalid.</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class=" col-md-10">
+            <input type="submit" [disabled]="formGroup.status !== 'VALID'" value="Edit" class="btn btn-default btn-local-login" />
+        </div>
+    </div>
+</form>

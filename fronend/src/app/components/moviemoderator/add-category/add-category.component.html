@@ -1,0 +1,30 @@
+<form [formGroup]="formGroup" class="form-horizontal" role="form" (ngSubmit)="create()">
+  <h4 class="margin-btm-20">Add a category</h4>
+
+  <div class="form-group" [class.has-error]="formGroup.get('Name').errors">
+    <div class="col-md-12">
+      <input class="form-control logincontrol" id="Name" name="Name" placeholder="Name" [(ngModel)]="category.Name"
+        formControlName="Name" type="text" value="" />
+      <div class="errors" *ngIf="formGroup.get('Name').dirty">
+        <div class="text-danger" [hidden]="formGroup.get('Name').errors == null || formGroup.get('Name').errors['required'] == null">Category Name is required.</div>
+        <div class="text-danger" [hidden]="formGroup.get('Name').errors == null || formGroup.get('Name').errors['pattern'] == null">Category Name is invalid.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group" [class.has-error]="formGroup.get('Description').errors">
+    <div class="col-md-12">
+      <input class="form-control logincontrol" id="Description" name="Description" placeholder="Description" [(ngModel)]="category.Description"
+        formControlName="Description" type="text" value="" />
+      <div class="errors" *ngIf="formGroup.get('Description').dirty">
+        <div class="text-danger" [hidden]="formGroup.get('Description').errors == null || formGroup.get('Description').errors['required'] == null">Description is required.</div>
+        <div class="text-danger" [hidden]="formGroup.get('Description').errors == null || formGroup.get('Description').errors['pattern'] == null">Description is invalid.</div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class=" col-md-10">
+      <input type="submit" [disabled]="formGroup.status !== 'VALID'" value="Add" class="btn btn-default btn-local-login" />
+    </div>
+  </div>
+</form>

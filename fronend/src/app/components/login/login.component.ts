@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from "@angular/router";
+import { Observable } from 'rxjs/Observable';
 
 import { LoginUser } from '../../core/models/auth/LoginUser';
-import { UserService } from '../../core/services/users/user.service';
-import { Response } from '@angular/http/src/static_response';
-import { Observable } from 'rxjs/Observable';
-import { error } from 'util';
+import { AuthService } from '../../core/services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -19,14 +17,12 @@ export class LoginComponent implements OnInit {
   formGroup: FormGroup;
   error: string;
 
-  constructor(private userService: UserService,
+  constructor(private authService: AuthService,
     private router: Router) { }
 
   login() {
-    var result = this.userService.login(this.user);
-    if (result) {
-      this.router.navigate(['/home']);
-    }
+    var result = this.authService.login(this.user);
+    console.log(result);
   }
 
   ngOnInit() {

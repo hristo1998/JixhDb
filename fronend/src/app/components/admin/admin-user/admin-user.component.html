@@ -1,0 +1,12 @@
+<h2>{{user?.userName}}</h2>  
+<ul>
+  <li><b>Email: </b> {{user?.email}} </li>
+  <li><b>Phone: </b> {{user?.phoneNumber}}</li>
+  <li><b>Age: </b> {{user?.age}}</li>
+  <li><b>Gender: </b> {{user?.gender}}</li>
+  <li><b>Town: </b> {{user?.homeTown}}</li>
+  <button type="button" class="btn"><a routeLink="/admin">Back</a></button>
+  <button type="button" class="btn btn-warning" (click)="mark()">Mark user profile for EDIT!</button>
+  <button type="button" class="btn btn-danger" (click)="delete()">Delete</button>
+  
+</ul>

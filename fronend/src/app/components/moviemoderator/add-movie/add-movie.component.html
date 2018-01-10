@@ -1,0 +1,99 @@
+<form [formGroup]="formGroup" class="form-horizontal" role="form" (ngSubmit)="create()">
+  <h4 class="margin-btm-20">Add a movie</h4>
+  <div class="form-group" [class.has-error]="formGroup.get('Title').errors">
+    <div class="col-md-12">
+      <input class="form-control logincontrol" id="Title" name="Title" placeholder="Title" [(ngModel)]="movie.Title" formControlName="Title"
+        type="text" value="" />
+      <div class="errors" *ngIf="formGroup.get('Title').dirty">
+        <div class="text-danger" [hidden]="formGroup.get('Title').errors == null || formGroup.get('Title').errors['required'] == null">Title is required.</div>
+        <div class="text-danger" [hidden]="formGroup.get('Title').errors == null || formGroup.get('Title').errors['pattern'] == null">Title is invalid.</div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group" [class.has-error]="formGroup.get('TrailerLink').errors">
+    <div class="col-md-12">
+      <input class="form-control logincontrol" id="TrailerLink" name="TrailerLink" placeholder="TrailerLink" [(ngModel)]="movie.TrailerLink"
+        formControlName="TrailerLink" type="text" value="" />
+      <div class="errors" *ngIf="formGroup.get('TrailerLink').dirty">
+        <div class="text-danger" [hidden]="formGroup.get('TrailerLink').errors == null || formGroup.get('TrailerLink').errors['required'] == null">Trailer Link is required.</div>
+        <div class="text-danger" [hidden]="formGroup.get('TrailerLink').errors == null || formGroup.get('TrailerLink').errors['pattern'] == null">Trailer Link is invalid.</div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group" [class.has-error]="formGroup.get('CoverUrl').errors">
+    <div class="col-md-12">
+      <input class="form-control logincontrol" id="CoverUrl" name="CoverUrl" placeholder="CoverUrl" [(ngModel)]="movie.CoverUrl"
+        formControlName="CoverUrl" type="text" value="" />
+      <div class="errors" *ngIf="formGroup.get('CoverUrl').dirty">
+        <div class="text-danger" [hidden]="formGroup.get('CoverUrl').errors == null || formGroup.get('CoverUrl').errors['required'] == null">Cover Url is required.</div>
+        <div class="text-danger" [hidden]="formGroup.get('CoverUrl').errors == null || formGroup.get('CoverUrl').errors['pattern'] == null">Cover Url is invalid.</div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group" [class.has-error]="formGroup.get('Duration').errors">
+    <div class="col-md-12">
+      <input class="form-control logincontrol" id="Duration" name="Duration" placeholder="Duration" [(ngModel)]="movie.Duration"
+        formControlName="Duration" type="text" value="" />
+      <div class="errors" *ngIf="formGroup.get('Duration').dirty">
+        <div class="text-danger" [hidden]="formGroup.get('Duration').errors == null || formGroup.get('Duration').errors['required'] == null">Duration is required.</div>
+        <div class="text-danger" [hidden]="formGroup.get('Duration').errors == null || formGroup.get('Duration').errors['pattern'] == null">Duration is invalid.</div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group" [class.has-error]="formGroup.get('Director').errors">
+    <div class="col-md-12">
+      <input class="form-control logincontrol" id="Director" name="Director" placeholder="Director" [(ngModel)]="movie.Director"
+        formControlName="Director" type="text" value="" />
+      <div class="errors" *ngIf="formGroup.get('Director').dirty">
+        <div class="text-danger" [hidden]="formGroup.get('Director').errors == null || formGroup.get('Director').errors['required'] == null">Director is required.</div>
+        <div class="text-danger" [hidden]="formGroup.get('Director').errors == null || formGroup.get('Director').errors['pattern'] == null">Director is invalid.</div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group" [class.has-error]="formGroup.get('Writers').errors">
+    <div class="col-md-12">
+      <input class="form-control logincontrol" id="Writers" name="Writers" placeholder="Writers" [(ngModel)]="movie.Writers" formControlName="Writers"
+        type="text" value="" />
+      <div class="errors" *ngIf="formGroup.get('Writers').dirty">
+        <div class="text-danger" [hidden]="formGroup.get('Writers').errors == null || formGroup.get('Writers').errors['required'] == null">Writers is required.</div>
+        <div class="text-danger" [hidden]="formGroup.get('Writers').errors == null || formGroup.get('Writers').errors['pattern'] == null">Writers is invalid.</div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group" [class.has-error]="formGroup.get('CategoriesString').errors">
+    <div class="col-md-12">
+      <input class="form-control logincontrol" id="CategoriesString" name="CategoriesString" placeholder="CategoriesString" [(ngModel)]="movie.CategoriesString"
+        formControlName="CategoriesString" type="text" value="" />
+      <div class="errors" *ngIf="formGroup.get('CategoriesString').dirty">
+        <div class="text-danger" [hidden]="formGroup.get('CategoriesString').errors == null || formGroup.get('CategoriesString').errors['required'] == null">Categories String is required.</div>
+        <div class="text-danger" [hidden]="formGroup.get('CategoriesString').errors == null || formGroup.get('CategoriesString').errors['pattern'] == null">Categories String is invalid.</div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group" [class.has-error]="formGroup.get('Cast').errors">
+    <div class="col-md-12">
+      <input class="form-control logincontrol" id="Cast" name="Cast" placeholder="Cast" [(ngModel)]="movie.Cast" formControlName="Cast"
+        type="text" value="" />
+      <div class="errors" *ngIf="formGroup.get('Cast').dirty">
+        <div class="text-danger" [hidden]="formGroup.get('Cast').errors == null || formGroup.get('Cast').errors['required'] == null">Cast is required.</div>
+        <div class="text-danger" [hidden]="formGroup.get('Cast').errors == null || formGroup.get('Cast').errors['pattern'] == null">Cast is invalid.</div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group" [class.has-error]="formGroup.get('StoryLine').errors">
+    <div class="col-md-12">
+      <input class="form-control logincontrol" id="StoryLine" name="StoryLine" placeholder="StoryLine" [(ngModel)]="movie.StoryLine"
+        formControlName="StoryLine" type="text" value="" />
+      <div class="errors" *ngIf="formGroup.get('StoryLine').dirty">
+        <div class="text-danger" [hidden]="formGroup.get('StoryLine').errors == null || formGroup.get('StoryLine').errors['required'] == null">Storyline is required.</div>
+        <div class="text-danger" [hidden]="formGroup.get('StoryLine').errors == null || formGroup.get('StoryLine').errors['pattern'] == null">Storyline is invalid.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class=" col-md-10">
+      <input type="submit" [disabled]="formGroup.status !== 'VALID'" value="Add" class="btn btn-default btn-local-login" />
+    </div>
+  </div>
+</form>

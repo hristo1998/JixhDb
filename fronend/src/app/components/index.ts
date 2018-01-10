@@ -16,6 +16,31 @@ import { HeaderComponent } from './shared/header/header.component';
 export { AdminComponent } from './admin/admin.component';
 import { AdminComponent } from './admin/admin.component';
 
+import { AdminUserComponent } from './admin/admin-user/admin-user.component';
+export { AdminUserComponent } from './admin/admin-user/admin-user.component';
+
+
+export { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home/home.component';
+
+export { ProfileComponent } from './user/profile.component';
+import { ProfileComponent } from './user/profile.component';
+
+export { EditProfileComponent } from './user/edit-profile.component';
+import { EditProfileComponent } from './user/edit-profile.component';
+
+export { AddMovieComponent } from './moviemoderator/add-movie/add-movie.component';
+import { AddMovieComponent } from './moviemoderator/add-movie/add-movie.component';
+
+export { AddCategoryComponent } from './moviemoderator/add-category/add-category.component';
+import { AddCategoryComponent } from './moviemoderator/add-category/add-category.component';
+
+export { MovieComponent } from './home/movie/movie.component';
+import { MovieComponent } from './home/movie/movie.component';
+
+
+
+
 
 export const appModuleComponents = [
     AppComponent,
@@ -23,6 +48,13 @@ export const appModuleComponents = [
     RegisterComponent,
     Error404Component,
     HeaderComponent,
-    AdminComponent
+    AdminComponent,
+    HomeComponent,
+    ProfileComponent,
+    EditProfileComponent,
+    AdminUserComponent,
+    AddMovieComponent,
+    AddCategoryComponent,
+    MovieComponent
   ]
   
